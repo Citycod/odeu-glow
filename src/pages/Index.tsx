@@ -25,12 +25,12 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 border-t border-glass-border">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-foreground/70 text-sm">
-              © 2024 Oduo Junior. Crafted with passion and purpose.
-            </div>
-            <div className="text-foreground/70 text-sm mt-4 md:mt-0">
-              Transforming ideas into digital reality
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="text-foreground/70 text-sm">
+            © 2024 Oduo Junior. Crafted with passion and purpose.
+          </div>
+          <div className="text-foreground/70 text-sm mt-4 md:mt-0">
+            Transforming ideas into digital reality
             </div>
           </div>
         </div>

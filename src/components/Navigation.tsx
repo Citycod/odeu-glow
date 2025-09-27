@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -15,10 +18,10 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'Journey', href: '#journey' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -30,25 +33,29 @@ const Navigation = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <div className="text-2xl font-bold gradient-text">
+        <Link to="/" className="text-2xl font-bold gradient-text">
           Oduo Junior
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
-              className="text-foreground/80 hover:text-primary transition-colors duration-300 relative group"
+              to={item.href}
+              className={`text-foreground/80 hover:text-primary transition-colors duration-300 relative group ${
+                (isHomePage && item.href.startsWith('#')) || location.pathname === item.href
+                  ? 'text-primary'
+                  : ''
+              }`}
             >
               {item.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </Link>
           ))}
-          <button className="hero-button text-primary-foreground">
+          <Link to="/contact" className="hero-button text-primary-foreground">
             Let's Connect
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -65,18 +72,18 @@ const Navigation = () => {
         <div className="md:hidden glass-card mt-4 mx-6 rounded-lg p-6">
           <div className="flex flex-col space-y-4">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 className="text-foreground/80 hover:text-primary transition-colors duration-300"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
-            <button className="hero-button text-primary-foreground mt-4">
+            <Link to="/contact" className="hero-button text-primary-foreground mt-4">
               Let's Connect
-            </button>
+            </Link>
           </div>
         </div>
       )}

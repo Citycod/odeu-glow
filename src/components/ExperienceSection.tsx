@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Building2, Calendar, ArrowRight } from 'lucide-react';
 
 const ExperienceSection = () => {
@@ -150,9 +151,9 @@ const ExperienceSection = () => {
             <p className="text-foreground/70 mb-8">
               Let's collaborate on your next big project and turn your vision into reality.
             </p>
-            <button className="hero-button">
+            <Link to="/contact" className="hero-button">
               Start a Conversation
-            </button>
+            </Link>
           </div>
         </motion.div>
       </div>

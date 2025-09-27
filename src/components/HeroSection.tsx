@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { initScrollAnimations } from '@/hooks/useScrollAnimation';
 import heroImage from '@/assets/oduo-junior-hero.jpg';
 
@@ -95,12 +96,12 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <button className="hero-button">
+              <Link to="/about" className="hero-button text-center">
                 Discover My Story
-              </button>
-              <button className="px-8 py-4 rounded-lg font-semibold border border-glass-border hover:bg-glass transition-all duration-300">
+              </Link>
+              <Link to="/portfolio" className="px-8 py-4 rounded-lg font-semibold border border-glass-border hover:bg-glass transition-all duration-300 text-center">
                 View My Work
-              </button>
+              </Link>
             </motion.div>
           </div>
 
