@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowLeft, ExternalLink, Github, Calendar, Users, Star } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github,  Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Portfolio = () => {

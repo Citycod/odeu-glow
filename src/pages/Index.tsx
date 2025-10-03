@@ -27,10 +27,10 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-foreground/70 text-sm">
-            © 2024 Oduo Junior. Crafted with passion and purpose.
+            © 2025  Asukwo Oduo.
           </div>
           <div className="text-foreground/70 text-sm mt-4 md:mt-0">
-            Transforming ideas into digital reality
+           <h3>MADE BY <a href="https://uplix.vercel.app" className='text-blue-500'>UPLIX</a></h3> 
             </div>
           </div>
         </div>
