@@ -67,8 +67,8 @@ const SkillsSection = () => {
 
   const stats = [
     { number: '5+', label: 'Years Experience', icon: CheckCircle },
-    { number: '200+', label: 'Articles Published', icon: FileText },
-    { number: '15+', label: 'Awards Won', icon: Award },
+    { number: '1000+', label: 'Articles Published', icon: FileText },
+    { number: '3+', label: 'Awards Won', icon: Award },
     { number: '5M+', label: 'Readers Reached', icon: Users }
   ];
 
@@ -92,7 +92,7 @@ const SkillsSection = () => {
             </span>
           </h2>
           <p className="text-gray-600 text-xs sm:text-sm lg:text-base max-w-2xl mx-auto leading-relaxed px-2">
-            From investigative deep dives to breaking news coverage, I bring a diverse skill set 
+            From compelling deep dives to breaking news and leading editorial teams, I bring a diverse skill set 
             honed through years of delivering impactful journalism.
           </p>
         </div>

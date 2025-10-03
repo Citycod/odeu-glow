@@ -48,8 +48,8 @@ const About = () => {
 
   const stats = [
     { number: '5+', label: 'Years in Journalism', icon: Award },
-    { number: '200+', label: 'Articles Published', icon: FileText },
-    { number: '15+', label: 'Awards & Recognition', icon: TrendingUp },
+    { number: '1000+', label: 'Articles Published', icon: FileText },
+    { number: '3+', label: 'Awards & Recognition', icon: TrendingUp },
     { number: '5M+', label: 'Readers Reached', icon: Users }
   ];
 
@@ -265,8 +265,7 @@ With over 6 years of experience in writing and having worked with several conten
           </h2>
           <p className="text-blue-100 text-lg leading-relaxed max-w-3xl mx-auto mb-8">
             When I'm not chasing stories or mentoring junior reporters, you'll find me exploring 
-            Lagos's vibrant culture, staying updated on global media trends, or advocating for 
-            press freedom and ethical journalism. I believe the best stories come from journalists 
+            Lagos's vibrant culture, staying updated on global tech trends, sports . I believe the best stories come from journalists 
             who are deeply connected to their communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

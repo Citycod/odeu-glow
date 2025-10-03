@@ -1,5 +1,6 @@
 import { WorkItem, WorkCategory } from '../types/work';
 
+
 export const workCategories: WorkCategory[] = [
   {
     id: 'writing',
@@ -35,7 +36,7 @@ export const workItems: WorkItem[] = [
     url: 'https://www.skabash.com/author/asukwo-oduo',
     platform: 'Skabash',
     category: 'writing',
-    imageUrl: '/assets/uncle2.jpg',
+    imageUrl: './assets/IMG-20251001-WA0081.jpg',
     date: '2023',
     tags: ['Writing', 'Articles', 'Blogging']
   },
@@ -46,7 +47,7 @@ export const workItems: WorkItem[] = [
     url: 'https://www.pulsesports.ng/author/asukwo-oduo-2023050910331374234',
     platform: 'Pulse Sports',
     category: 'writing',
-    imageUrl: '/api/placeholder/400/250?text=Pulse+Sports',
+    imageUrl: '/assets/IMG-20251001-WA0082.jpg',
     date: '2023',
     tags: ['Sports', 'Journalism', 'Analysis']
   },
@@ -57,7 +58,7 @@ export const workItems: WorkItem[] = [
     url: 'https://amaka.studio/u/content/5_JU0ZPjpMlY76LfuUHiN',
     platform: 'Amaka Studio',
     category: 'content',
-    imageUrl: '/api/placeholder/400/250?text=Amaka+Studio',
+    imageUrl: '/assets/IMG-20251001-WA0084.jpg',
     date: '2023',
     tags: ['Content', 'Creative', 'Media']
   },
@@ -68,7 +69,7 @@ export const workItems: WorkItem[] = [
     url: 'https://amaka.studio/u/content/PRdhfuh-A2-jFdz5odJV_',
     platform: 'Amaka Studio',
     category: 'content',
-    imageUrl: '/api/placeholder/400/250?text=Amaka+Studio+2',
+    imageUrl: '/assets/IMG-20251001-WA0076.jpg',
     date: '2023',
     tags: ['Content', 'Projects', 'Creative']
   },
@@ -79,7 +80,7 @@ export const workItems: WorkItem[] = [
     url: 'https://punchng.com/funke-akindele-flouting-law-on-social-distancing',
     platform: 'Punch Newspaper',
     category: 'writing',
-    imageUrl: '/api/placeholder/400/250?text=Punch+Newspaper',
+    imageUrl: '/assets/IMG-20251001-WA0073.jpg',
     date: '2020',
     tags: ['News', 'Journalism', 'Feature']
   },
@@ -90,7 +91,7 @@ export const workItems: WorkItem[] = [
     url: 'https://twitter.com/profoduo',
     platform: 'Twitter/X',
     category: 'social',
-    imageUrl: '/api/placeholder/400/250?text=Twitter+Profile',
+    imageUrl: '/assets/IMG-20251001-WA0075.jpg',
     date: 'Present',
     tags: ['Social Media', 'Engagement', 'Networking']
   },
@@ -101,7 +102,7 @@ export const workItems: WorkItem[] = [
     url: 'https://www.clippings.me/asukwo',
     platform: 'Clippings.me',
     category: 'portfolio',
-    imageUrl: '/api/placeholder/400/250?text=Professional+Portfolio',
+    imageUrl: '/assets/IMG-20251001-WA0070 copy.jpg',
     date: 'Present',
     tags: ['Portfolio', 'Writing', 'Samples']
   }

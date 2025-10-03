@@ -11,21 +11,21 @@ const HeroSection = () => {
   }, []);
 
   const skills = [
-    'Investigative Reporting',
-    'Feature Writing',
     'Digital Storytelling',
+    'Feature Writing',
     'Editorial Leadership',
     'SEO Optimization',
-    'Sport News',
+    'Sports News',
     'Interview Techniques',
     'Media Ethics',
-    'Content Strategy'
+    'Content Strategy',
+    'CopyWriting'
   ];
 
   const stats = [
     { number: '5+', label: 'Years Experience' },
-    { number: '200+', label: 'Stories Published' },
-    { number: '15+', label: 'Awards Won' }
+    { number: '1000+', label: 'Stories Published' },
+    { number: '3+', label: 'Awards Won' }
   ];
 
   return (
@@ -73,7 +73,7 @@ const HeroSection = () => {
                 <div className="flex items-center space-x-1 sm:space-x-2 pt-1 sm:pt-2">
                   <div className="w-4 h-0.5 sm:w-6 sm:h-1 bg-gradient-to-r from-cyan-400 to-blue-500"></div>
                   <h2 className="text-sm sm:text-base lg:text-lg font-semibold text-white/90 tracking-wide">
-                    TECH • INNOVATION • SPORT 
+                    TECH • INNOVATION • LEADERSHIP 
                   </h2>
                 </div>
               </div>
