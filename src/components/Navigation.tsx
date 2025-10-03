@@ -8,10 +8,18 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+      
+      // Update scroll progress
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+      const progress = (scrollTop / (docHeight - windowHeight)) * 100;
+      setScrollProgress(Math.min(progress, 100));
       
       // Update active section based on scroll position
       const sections = ['home', 'about', 'portfolio', 'contact'];
@@ -45,30 +53,29 @@ const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-200/50 py-3'
-          : 'bg-transparent py-6'
+          ? 'bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-200/50 py-1 sm:py-2'
+          : 'bg-transparent py-2 sm:py-4'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 flex items-center justify-between">
         {/* Logo/Brand */}
         <Link 
           to="/" 
-          className="flex items-center space-x-3 group"
+          className="flex items-center space-x-1 sm:space-x-2 group flex-shrink-0"
           onClick={closeMobileMenu}
         >
           <div className="relative">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-lg flex items-center justify-center shadow-lg">
-              <Award className="w-5 h-5 text-white" />
+            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-600 to-cyan-500 rounded flex items-center justify-center shadow-lg">
+              <Award className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm"></div>
           </div>
           <div className="flex flex-col">
             <span className={`font-bold tracking-tight transition-all duration-300 ${
-              isScrolled ? 'text-gray-900 text-lg' : 'text-white text-xl'
+              isScrolled ? 'text-gray-900 text-sm sm:text-base' : 'text-white text-base sm:text-lg'
             }`}>
               Asukwo Oduo
             </span>
-            <span className={`text-xs transition-all duration-300 ${
+            <span className={`text-[10px] sm:text-xs transition-all duration-300 hidden xs:block ${
               isScrolled ? 'text-gray-600' : 'text-white/80'
             }`}>
               Journalist
@@ -77,7 +84,7 @@ const Navigation = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-1">
+        <div className="hidden md:flex items-center space-x-0 lg:space-x-1">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = location.pathname === item.href || 
@@ -88,7 +95,7 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 group relative ${
+                className={`flex items-center space-x-1 px-2 lg:px-3 py-1 rounded-md transition-all duration-300 group relative ${
                   isActive
                     ? 'text-blue-600 bg-blue-50/80 shadow-sm'
                     : isScrolled 
@@ -96,14 +103,14 @@ const Navigation = () => {
                       : 'text-white/90 hover:text-white hover:bg-white/10'
                 }`}
               >
-                <Icon className={`w-4 h-4 transition-all duration-300 ${
+                <Icon className={`w-3 h-3 sm:w-4 sm:h-4 transition-all duration-300 ${
                   isActive ? 'scale-110' : 'group-hover:scale-110'
                 }`} />
-                <span className="font-medium text-sm">{item.name}</span>
+                <span className="font-medium text-xs sm:text-sm whitespace-nowrap">{item.name}</span>
                 
                 {/* Active indicator */}
                 {isActive && (
-                  <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-blue-500 rounded-full"></div>
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-blue-500 rounded-full"></div>
                 )}
               </Link>
             );
@@ -112,7 +119,7 @@ const Navigation = () => {
           {/* CTA Button */}
           <Link 
             to="/contact" 
-            className={`ml-4 px-6 py-2 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 shadow-lg ${
+            className={`ml-1 lg:ml-2 px-2 lg:px-4 py-1 rounded-md font-semibold text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 shadow whitespace-nowrap ${
               isScrolled
                 ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white hover:from-blue-700 hover:to-cyan-600'
                 : 'bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30'
@@ -125,24 +132,25 @@ const Navigation = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`md:hidden p-2 rounded-lg transition-all duration-300 ${
+          className={`md:hidden p-1 rounded transition-all duration-300 ${
             isScrolled
               ? 'text-gray-700 hover:bg-gray-100'
               : 'text-white hover:bg-white/10'
           }`}
+          aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          {isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       <div className={`md:hidden absolute top-full left-0 right-0 transition-all duration-500 overflow-hidden ${
         isMobileMenuOpen 
-          ? 'max-h-96 opacity-100 translate-y-0' 
-          : 'max-h-0 opacity-0 -translate-y-4'
+          ? 'max-h-80 opacity-100 translate-y-0' 
+          : 'max-h-0 opacity-0 -translate-y-2'
       }`}>
-        <div className="bg-white/95 backdrop-blur-xl border-b border-gray-200/50 mx-6 rounded-b-lg shadow-xl">
-          <div className="flex flex-col p-4">
+        <div className="bg-white/95 backdrop-blur-xl border-b border-gray-200/50 mx-2 sm:mx-3 rounded-b-lg shadow-xl">
+          <div className="flex flex-col p-2 space-y-1">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = location.pathname === item.href;
@@ -152,16 +160,16 @@ const Navigation = () => {
                   key={item.name}
                   to={item.href}
                   onClick={closeMobileMenu}
-                  className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 group ${
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-md transition-all duration-300 group ${
                     isActive
                       ? 'bg-blue-50 text-blue-600 border border-blue-100'
                       : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${
+                  <Icon className={`w-3 h-3 ${
                     isActive ? 'text-blue-500' : 'text-gray-400 group-hover:text-blue-500'
                   }`} />
-                  <span className="font-medium">{item.name}</span>
+                  <span className="font-medium text-sm">{item.name}</span>
                 </Link>
               );
             })}
@@ -170,7 +178,7 @@ const Navigation = () => {
             <Link 
               to="/contact" 
               onClick={closeMobileMenu}
-              className="mt-4 mx-4 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-center rounded-lg font-semibold shadow-lg hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105"
+              className="mt-1 mx-1 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-center rounded-md font-semibold text-sm shadow hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105"
             >
               Let's Connect
             </Link>
@@ -183,7 +191,7 @@ const Navigation = () => {
         <div 
           className="h-full bg-gradient-to-r from-blue-500 to-cyan-500 transition-all duration-300"
           style={{
-            width: `${Math.min((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100, 100)}%`
+            width: `${scrollProgress}%`
           }}
         />
       </div>
