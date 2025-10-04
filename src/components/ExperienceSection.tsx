@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 
 import pulse from "../assets/pulse.webp";
-import batta from "../assets/batta.webp";
 import blackdot from "../assets/blackdot.jpeg";
 
 interface Experience {
@@ -77,7 +76,7 @@ const ExperienceSection = () => {
       color: "from-purple-500 to-pink-500",
       icon: Target,
       duration: "7 months",
-      logo: batta,
+      logo: "",
     },
     {
       year: "JUNE 2022 - NOV 2022",
