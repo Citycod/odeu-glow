@@ -189,7 +189,7 @@ const handleSubmit = (e: React.FormEvent) => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300"
+                      className="w-full px-4 py-3 text-black rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300"
                       placeholder="John Doe"
                       required
                     />
@@ -204,7 +204,7 @@ const handleSubmit = (e: React.FormEvent) => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300"
+                      className="w-full px-4 py-3 text-black rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300"
                       placeholder="john@company.com"
                       required
                     />
@@ -259,7 +259,7 @@ const handleSubmit = (e: React.FormEvent) => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border text-black border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300"
+                    className="w-full px-4 py-3 text-black rounded-xl border text-black border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300"
                     placeholder="Brief description of your project"
                     required
                   />
@@ -275,7 +275,7 @@ const handleSubmit = (e: React.FormEvent) => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={6}
-                    className="w-full px-4 py-3 rounded-xl text-black border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 text-black rounded-xl text-black border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 resize-none"
                     placeholder="Please describe your project goals, timeline, challenges, target audience, and any specific requirements..."
                     required
                   ></textarea>
