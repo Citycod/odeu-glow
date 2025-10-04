@@ -29,7 +29,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="min-h-screen relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-slate-900 to-blue-900">
+    <section className=" relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-slate-900 to-blue-900">
       {/* High-Voltage Background */}
       <div className="absolute inset-0">
         {/* Animated electric pulses */}
