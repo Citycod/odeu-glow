@@ -29,8 +29,8 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-slate-900 to-blue-900 min-h-screen">
-      {/* Enhanced Background Effects */}
+    <section className=" relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-slate-900 to-blue-900">
+      {/* High-Voltage Background */}
       <div className="absolute inset-0">
         {/* Animated electric pulses */}
         <div className="absolute inset-0 opacity-30">
