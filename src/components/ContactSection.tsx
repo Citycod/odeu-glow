@@ -12,22 +12,21 @@ const ContactSection = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setIsSubmitting(false);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
-      alert('Thank you for your message! I\'ll get back to you soon.');
-    }, 2000);
-  };
+  const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+
+  const subject = encodeURIComponent(formData.subject);
+  const body = encodeURIComponent(`
+    Name: ${formData.name}
+    Email: ${formData.email}
+    Message: ${formData.message}
+  `);
+
+  const mailtoLink = `mailto:asukwooduo@gmail.com?subject=${subject}&body=${body}`;
+
+  // Opens the user's email client
+  window.location.href = mailtoLink;
+};
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({

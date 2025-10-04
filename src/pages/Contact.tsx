@@ -27,7 +27,7 @@ const handleSubmit = (e: React.FormEvent) => {
     Message: ${formData.message}
   `);
 
-  const mailtoLink = `mailto:edudjewisdom7@gmail.com?subject=${subject}&body=${body}`;
+  const mailtoLink = `mailto:mailto:asukwooduo@gmail.com?subject=${subject}&body=${body}`;
 
   // Opens the user's email client
   window.location.href = mailtoLink;
